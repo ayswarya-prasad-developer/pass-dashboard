@@ -1,0 +1,136 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  background: #f4f4f4;
+}
+.widget-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.widget-wrapper {
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: move;
+}
+.widget-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.widget-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.widget-item:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive: Grid layout for wider screens */
+@media (min-width: 768px) {
+  .widget-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+  }
+}
+.cdk-drag .widget-item{
+  width: 100%;
+  margin-bottom: 16px;
+}
+.main-content {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.widget-item:active {
+  cursor: grabbing;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+app-chart-widget {
+  width: 100%;
+  display: block;
+}
+.widget-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.widget-item {
+  flex: 1 1 calc(50% - 16px); /* 2 in a row with gap */
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+}
+
+.widget-wrapper {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .widget-item {
+    flex: 1 1 100%;
+  }
+}
+.remove-btn {
+  /*position: absolute;*/
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+  z-index: 10;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+.widget-item {
+  resize: both;
+  overflow: auto;
+  min-width: 200px;
+  min-height: 150px;
+}
+

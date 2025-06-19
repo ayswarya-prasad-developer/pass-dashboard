@@ -1,0 +1,23 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.error {
+  color: #f44336;
+  margin-top: 8px;
+  font-size: 14px;
+}

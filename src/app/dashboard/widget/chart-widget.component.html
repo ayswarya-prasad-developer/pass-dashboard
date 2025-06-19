@@ -1,0 +1,7 @@
+<div class="chart-container">
+  <canvas *ngIf="chartConfig" baseChart
+          [type]="chartConfig.type"
+          [data]="chartConfig.data"
+          [options]="chartConfig.options">
+  </canvas>
+</div>

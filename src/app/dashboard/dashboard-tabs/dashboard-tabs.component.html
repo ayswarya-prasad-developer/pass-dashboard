@@ -1,0 +1,16 @@
+<div class="tabs">
+  <button
+    *ngFor="let dash of dashboards; let i = index"
+    [class.active]="i === activeTabIndex"
+    (click)="selectDashboard(i)">
+    {{ dash.name }}
+  </button>
+
+  <button (click)="addDashboard()">➕ Add Dashboard</button>
+</div>
+
+<!-- Show selected dashboard -->
+<app-dashboard
+  *ngIf="activeDashboard"
+  [dashboard]="activeDashboard">
+</app-dashboard>

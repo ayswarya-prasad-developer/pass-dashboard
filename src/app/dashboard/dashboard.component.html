@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+  <div class="widget-list">
+
+  <div class="widget-item" *ngFor="let widget of widgets; let i = index" cdkDrag>
+  <button class="remove-btn" (click)="removeWidget(i)">×</button>
+  <ng-container [ngSwitch]="widget.type">
+    <app-chart-widget *ngSwitchCase="'chart'" [chartType]="widget.chartType!" [dataUrl]="widget.dataUrl"></app-chart-widget>
+    <app-table-widget *ngSwitchCase="'table'" [dataUrl]="widget.dataUrl" [title]="widget.title"></app-table-widget>
+    <app-text-widget *ngSwitchCase="'text'" [content]="widget.content || 'Default content'" [title]="widget.title || 'Default title'"></app-text-widget>
+  </ng-container>
+</div>
+ </div>
+ </div>
+</div>
+

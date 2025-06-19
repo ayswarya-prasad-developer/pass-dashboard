@@ -1,0 +1,8 @@
+<div class="widget-content">
+  <button (click)="remove.emit()" class="remove-btn">✖</button>
+  <ng-container [ngSwitch]="type">
+    <app-chart-widget *ngSwitchCase="'chart'"></app-chart-widget>
+    <app-table-widget *ngSwitchCase="'table'"></app-table-widget>
+    <app-text-widget *ngSwitchCase="'text'"></app-text-widget>
+  </ng-container>
+</div>
